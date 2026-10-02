@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 
-// Години роботи — онови під реального клієнта
 const HOURS: Record<number, [number, number] | null> = {
-  0: [9, 20], // неділя
+  0: [9, 20], 
   1: [8, 20],
   2: [8, 20],
   3: [8, 20],
   4: [8, 20],
   5: [8, 20],
-  6: [9, 20] // субота
+  6: [9, 20] 
 };
 
 function getStatus(now: Date) {
@@ -39,7 +38,6 @@ export default function StatusBadge() {
     return () => clearInterval(id);
   }, []);
 
-  // Перший рендер на сервері — нейтральний стан, щоб уникнути hydration-мерехтіння
   if (!status) {
     return (
       <span className="pill">
