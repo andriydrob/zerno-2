@@ -1,11 +1,11 @@
 ---
 const photos = [
-  { label: 'Робоча зона', caption: 'Тихі столи біля вікна, розетки на кожному' },
-  { label: 'Бариста-бар', caption: 'Слов\u2019янський оаз, звідки видно весь процес' },
-  { label: 'Ефіопія · Йоргачеффе', caption: 'Квіткові, цитрусові ноти' },
-  { label: 'Колумбія · Уїла', caption: 'Карамель, горіх, м\u2019яка кислинка' },
-  { label: 'Затишний куток', caption: 'Диван, книжки, найкраще світло вранці' },
-  { label: 'Тераса', caption: 'Кілька столиків надворі у теплу пору' }
+  { id: 'workspace', label: 'Робоча зона', caption: 'Тихі столи біля вікна, розетки на кожному' },
+  { id: 'barista-bar', label: 'Бариста-бар', caption: 'Слов\u2019янський оаз, звідки видно весь процес' },
+  { id: 'ethiopia', label: 'Ефіопія · Йоргачеффе', caption: 'Квіткові, цитрусові ноти' },
+  { id: 'colombia', label: 'Колумбія · Уїла', caption: 'Карамель, горіх, м\u2019яка кислинка' },
+  { id: 'cozy-corner', label: 'Затишний куток', caption: 'Диван, книжки, найкраще світло вранці' },
+  { id: 'terrace', label: 'Тераса', caption: 'Кілька столиків надворі у теплу пору' }
 ];
 ---
 
@@ -22,9 +22,20 @@ const photos = [
           class="group relative snap-start shrink-0 w-[78%] sm:w-[45%] md:w-auto aspect-[4/5] rounded-3xl border border-slate-border bg-slate-soft overflow-hidden"
         >
           <div
-            class="absolute inset-0 opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+            class="absolute inset-0 opacity-70 group-hover:opacity-90 transition-opacity duration-500"
             style={`background: radial-gradient(circle at ${20 + (i % 3) * 25}% ${20 + (i % 2) * 40}%, rgba(163,230,53,0.18), transparent 60%), linear-gradient(160deg, #232327, #18181B);`}
           />
+
+          <img
+            src={`/atmosphere/${photo.id}.jpg`}
+            alt={photo.label}
+            loading="lazy"
+            onerror="this.style.display='none'"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
+
           <div class="relative h-full flex flex-col justify-end p-5">
             <p class="text-cream font-medium">{photo.label}</p>
             <p class="text-sm text-cream/50 mt-1">{photo.caption}</p>
