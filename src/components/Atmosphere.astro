@@ -1,0 +1,36 @@
+---
+const photos = [
+  { label: 'Робоча зона', caption: 'Тихі столи біля вікна, розетки на кожному' },
+  { label: 'Бариста-бар', caption: 'Слов\u2019янський оаз, звідки видно весь процес' },
+  { label: 'Ефіопія · Йоргачеффе', caption: 'Квіткові, цитрусові ноти' },
+  { label: 'Колумбія · Уїла', caption: 'Карамель, горіх, м\u2019яка кислинка' },
+  { label: 'Затишний куток', caption: 'Диван, книжки, найкраще світло вранці' },
+  { label: 'Тераса', caption: 'Кілька столиків надворі у теплу пору' }
+];
+---
+
+<section id="atmosphere" class="border-t border-slate-border">
+  <div class="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
+    <p class="section-label mb-4">Простір і зерно</p>
+    <h2 class="text-3xl md:text-[2.5rem] leading-tight mb-12 max-w-xl text-cream font-semibold">
+      Робота, походження зерна, атмосфера
+    </h2>
+
+    <div class="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-2 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3">
+      {photos.map((photo, i) => (
+        <div
+          class="group relative snap-start shrink-0 w-[78%] sm:w-[45%] md:w-auto aspect-[4/5] rounded-3xl border border-slate-border bg-slate-soft overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+            style={`background: radial-gradient(circle at ${20 + (i % 3) * 25}% ${20 + (i % 2) * 40}%, rgba(163,230,53,0.18), transparent 60%), linear-gradient(160deg, #232327, #18181B);`}
+          />
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <p class="text-cream font-medium">{photo.label}</p>
+            <p class="text-sm text-cream/50 mt-1">{photo.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

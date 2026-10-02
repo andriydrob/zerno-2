@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Menu from '../components/Menu.astro';
+import Atmosphere from '../components/Atmosphere.astro';
+import Location from '../components/Location.astro';
+import Footer from '../components/Footer.astro';
+import CartButton from '../components/CartButton.tsx';
+import QuickOrder from '../components/QuickOrder.tsx';
+---
+
+<Layout
+  title="Зерно — кав'ярня на Печерську, Київ | кава власної обсмажки"
+  description="Кав'ярня Зерно на Печерську: кава власної обсмажки, домашні десерти, тиха робоча зона. Відкрито щодня з 8:00. Вул. Січових Стрільців, 12."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <Menu />
+    <Atmosphere />
+    <Location />
+  </main>
+  <Footer />
+
+  <CartButton client:load variant="fab" />
+  <QuickOrder client:load />
+</Layout>

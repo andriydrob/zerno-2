@@ -1,0 +1,70 @@
+---
+import CartButton from './CartButton.tsx';
+
+const links = [
+  { href: '#home', label: 'Головна' },
+  { href: '#menu', label: 'Меню' },
+  { href: '#atmosphere', label: 'Простір' },
+  { href: '#location', label: 'Локація' }
+];
+---
+
+<header class="sticky top-0 z-40 bg-slate/85 backdrop-blur border-b border-slate-border">
+  <nav class="max-w-content mx-auto flex items-center justify-between px-6 py-4 md:px-10">
+    <a href="#home" class="font-display text-xl font-semibold tracking-tight text-cream flex items-center gap-2">
+      <span class="h-2.5 w-2.5 rounded-full bg-lime shadow-glow"></span>
+      Зерно
+    </a>
+
+    <ul class="hidden md:flex items-center gap-1 rounded-full border border-slate-border bg-slate-soft/60 p-1">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block rounded-full px-4 py-1.5 text-sm text-cream/70 hover:text-cream hover:bg-white/5 transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <CartButton client:load variant="nav" />
+      <details id="mobile-nav" class="md:hidden relative">
+        <summary class="list-none cursor-pointer text-cream/80 px-2 py-1 pill">Меню</summary>
+        <ul class="absolute right-0 mt-2 w-44 rounded-2xl border border-slate-border bg-slate-soft p-2 shadow-xl">
+          {links.map((link) => (
+            <li>
+              <a href={link.href} class="block rounded-xl px-3 py-2 text-sm text-cream/80 hover:bg-white/5">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileNav = document.getElementById('mobile-nav');
+
+  // Закрити, якщо натиснули на пункт меню (напр. "Локація")
+  mobileNav?.addEventListener('click', (e) => {
+    if (e.target instanceof HTMLElement && e.target.closest('a')) {
+      mobileNav.removeAttribute('open');
+    }
+  });
+
+  // Закрити, якщо натиснули будь-де поза меню
+  document.addEventListener('click', (e) => {
+    if (
+      mobileNav?.hasAttribute('open') &&
+      e.target instanceof Node &&
+      !mobileNav.contains(e.target)
+    ) {
+      mobileNav.removeAttribute('open');
+    }
+  });
+</script>
