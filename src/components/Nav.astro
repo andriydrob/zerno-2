@@ -50,14 +50,12 @@ const links = [
 <script>
   const mobileNav = document.getElementById('mobile-nav');
 
-  // Закрити, якщо натиснули на пункт меню (напр. "Локація")
   mobileNav?.addEventListener('click', (e) => {
     if (e.target instanceof HTMLElement && e.target.closest('a')) {
       mobileNav.removeAttribute('open');
     }
   });
 
-  // Закрити, якщо натиснули будь-де поза меню
   document.addEventListener('click', (e) => {
     if (
       mobileNav?.hasAttribute('open') &&
