@@ -12,7 +12,7 @@ type MenuItem = {
   glutenFree?: boolean;
   vegan?: boolean;
   sugarFree?: boolean;
-  customizable?: boolean; // відкриває Customizer Drawer (молоко / сироп / +shot)
+  customizable?: boolean;
 };
 
 type Category = {
@@ -179,7 +179,6 @@ export default function MenuSection() {
 
   return (
     <div>
-      {/* Категорії + окрема веган-колекція */}
       <div role="tablist" aria-label="Категорії меню" className="flex flex-wrap items-center gap-2 mb-2">
         {categories.map((category) => {
           const isActive = !veganView && category.id === activeId;
@@ -223,7 +222,6 @@ export default function MenuSection() {
         </button>
       </div>
 
-      {/* Пошук + дієтичні фільтри */}
       <div className="flex flex-col sm:flex-row gap-3 mb-10 mt-6">
         <div className="relative flex-1 max-w-sm">
           <svg
@@ -261,7 +259,6 @@ export default function MenuSection() {
         </div>
       </div>
 
-      {/* Веган-колекція: групи по категоріях */}
       {veganView ? (
         veganGroups.length === 0 ? (
           <p className="text-cream/50 py-10 text-center">Нічого не знайдено — спробуй інший запит або фільтр.</p>
@@ -328,7 +325,6 @@ function CustomizerDrawer({ item, onClose }: { item: MenuItem; onClose: () => vo
   const basePrice = size ? size.price : item.price ?? 0;
   const unitPrice = basePrice + (showCustomization && extraShot ? extraShotPrice : 0);
 
-  // Блокуємо скрол сторінки позаду, поки відкрито дровер
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
