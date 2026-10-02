@@ -1,7 +1,7 @@
 import { atom } from 'nanostores';
 
 export type CartLine = {
-  id: string; // unique per customization combo
+  id: string;
   name: string;
   size: string;
   milk: string;
