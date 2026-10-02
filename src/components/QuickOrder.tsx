@@ -32,7 +32,6 @@ export default function QuickOrder() {
 
   const minTime = useMemo(nextValidTime, [open]);
 
-  // Блокуємо скрол сторінки позаду, поки відкрито кошик
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
