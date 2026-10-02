@@ -13,7 +13,7 @@ const {
   ogImage = '/og-cover.jpg'
 } = Astro.props;
 
-// Site-wide constants — заміни на реальні дані клієнта перед публікацією
+// замінити на дані клієнта
 const SITE_NAME = 'Зерно';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
@@ -56,12 +56,10 @@ const localBusinessSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph (Facebook, Instagram, Viber, месенджери) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={title} />
@@ -70,13 +68,11 @@ const localBusinessSchema = {
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:locale" content="uk_UA" />
 
-    <!-- Twitter/X card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <!-- Structured data для Google (rich snippets: години, адреса, рейтинг) -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
     <meta name="theme-color" content="#18181B" />
