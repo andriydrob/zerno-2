@@ -1,4 +1,4 @@
-# ☕ Zerno 2 — Interactive Coffee Shop Experience
+# Zerno 2 — Interactive Coffee Shop Experience
 
 An interactive coffee shop website built with Astro, React, TypeScript, and Tailwind CSS. Zerno 2 extends the traditional café website concept with cart management, quick-order interactions, and a more dynamic user experience.
 
@@ -6,7 +6,7 @@ The project combines Astro's component-based page architecture with React-powere
 
 ---
 
-## 📌 Overview
+## Overview
 
 Zerno 2 is a web project focused on making the café browsing and ordering experience more engaging.
 
@@ -14,7 +14,7 @@ Unlike a purely informational landing page, this project includes dedicated comp
 
 The result is a foundation for a more interactive coffee shop storefront that can be extended with additional ordering functionality.
 
-## ✨ Key Features
+## Key Features
 
 - **Interactive Shopping Cart** — A dedicated cart component and centralized cart store for managing shopping cart state.
 - **Quick Order Interface** — A component designed to support a streamlined ordering experience.
@@ -27,7 +27,7 @@ The result is a foundation for a more interactive coffee shop storefront that ca
 - **Tailwind CSS** — Utility-first styling for consistent interface development.
 - **Static Asset Organization** — Dedicated directories for café photography and menu images.
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Technology | Role |
 | --- | --- |
@@ -38,7 +38,7 @@ The result is a foundation for a more interactive coffee shop storefront that ca
 | [Vercel](https://vercel.com/) | Deployment platform, if configured for this repository |
 | npm | Dependency management |
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```text
 zerno-2/
@@ -139,7 +139,7 @@ The project organizes its visual resources by purpose:
 - **Favicon** — The browser tab icon.
 - **Robots file** — Instructions for search engine crawlers.
 
-## 🏛️ Architecture
+## Architecture
 
 Zerno 2 uses a component-based architecture that separates the website's presentation from its interactive functionality.
 
@@ -161,7 +161,7 @@ Global CSS and Tailwind CSS support shared design rules and component styling.
 
 This separation creates a foundation for adding new interactive features without putting all application logic into a single page or component.
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -206,7 +206,7 @@ npm run preview
 
 > These commands assume the corresponding scripts are defined in `package.json`. Check the scripts section if any command is unavailable.
 
-## 📜 Available Scripts
+## Available Scripts
 
 | Command | Description |
 | --- | --- |
@@ -215,7 +215,7 @@ npm run preview
 | `npm run build` | Builds the application for production. |
 | `npm run preview` | Previews the production build locally. |
 
-## 🚀 Deployment
+## Deployment
 
 The project can be deployed to a platform that supports Astro applications, such as [Vercel](https://vercel.com/).
 
@@ -229,7 +229,7 @@ General deployment workflow:
 
 For Vercel, review the repository's actual configuration and root directory before deploying.
 
-## 🔧 Potential Improvements
+## Potential Improvements
 
 The existing component structure provides room for future development, including:
 
@@ -246,7 +246,7 @@ The existing component structure provides room for future development, including
 
 These are potential extensions, not claims that all such functionality is currently implemented.
 
-## 🤝 Contributing
+## Contributing
 
 Suggestions and improvements are welcome.
 
@@ -256,7 +256,7 @@ Suggestions and improvements are welcome.
 4. Commit your work with a descriptive message.
 5. Push your branch and open a pull request.
 
-## 📄 License
+## License
 
 No license information is documented here. Unless a license is added to the repository, do not assume that the source code is available for unrestricted reuse or redistribution.
 
